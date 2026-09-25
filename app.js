@@ -1,11 +1,12 @@
 /**
  * 3-Jug Water Riddle Simulation (8L, 5L, 3L)
+ * Supported Targets: 2L, 6L, 1L, 4L, 7L
  */
 
 let jug8 = 0;
 let jug5 = 0;
 let jug3 = 0;
-let targetGoal = 7;
+let targetGoal = 2;
 
 const CAPACITIES = {
   8: 8,
@@ -105,7 +106,7 @@ document.getElementById('empty-3-btn').addEventListener('click', () => {
   clearResult();
 });
 
-// Goal selection chips
+// Goal selection chips (2, 6, 1, 4, 7)
 function setGoal(goal) {
   targetGoal = goal;
   targetText.textContent = `${targetGoal} Liter${targetGoal === 1 ? '' : 's'}`;
@@ -121,20 +122,10 @@ document.querySelectorAll('.goal-chip[data-goal]').forEach(chip => {
   });
 });
 
-// Random Goal Generator
-const possibleGoals = [1, 2, 4, 6, 7];
-document.getElementById('random-goal-btn').addEventListener('click', () => {
-  document.querySelectorAll('.goal-chip').forEach(c => c.classList.remove('active'));
-  document.getElementById('random-goal-btn').classList.add('active');
-  const otherGoals = possibleGoals.filter(g => g !== targetGoal);
-  const randomGoal = otherGoals[Math.floor(Math.random() * otherGoals.length)];
-  setGoal(randomGoal);
-});
-
 // Test Button
 testBtn.addEventListener('click', () => {
   if (jug8 === targetGoal || jug5 === targetGoal || jug3 === targetGoal) {
-    showResult(`🎉 Correct! Exactly ${targetGoal} Liter${targetGoal === 1 ? '' : 's'} achieved!`, true);
+    showResult(`🎉 Correct! Exactly ${targetGoal} Liter${targetGoal === 1 ? '' : 's'} measured!`, true);
   } else {
     showResult(`❌ Not ${targetGoal} Liter${targetGoal === 1 ? '' : 's'} yet. Keep trying!`, false);
   }
@@ -160,5 +151,5 @@ document.getElementById('reset-btn').addEventListener('click', () => {
 });
 
 // Initialize
-setGoal(7);
+setGoal(2);
 updateUI();

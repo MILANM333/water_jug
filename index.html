@@ -13,16 +13,16 @@
     <!-- Header -->
     <header class="header">
       <h1>Water Jug Riddle</h1>
-      <p>Measure exactly <strong id="target-text">7 Liters</strong> using 8L, 5L, and 3L jugs.</p>
+      <p>Measure exactly <strong id="target-text">2 Liters</strong> using 8L, 5L, and 3L jugs.</p>
       
-      <!-- Target Goal Selection -->
+      <!-- Target Goal Selection: Only 2L, 6L, 1L, 4L, 7L -->
       <div class="goal-picker">
         <span class="goal-label">Target:</span>
-        <button class="goal-chip active" data-goal="7">7 Liters</button>
+        <button class="goal-chip active" data-goal="2">2 Liters</button>
         <button class="goal-chip" data-goal="6">6 Liters</button>
-        <button class="goal-chip" data-goal="2">2 Liters</button>
         <button class="goal-chip" data-goal="1">1 Liter</button>
-        <button class="goal-chip goal-random" id="random-goal-btn">🎲 Random</button>
+        <button class="goal-chip" data-goal="4">4 Liters</button>
+        <button class="goal-chip" data-goal="7">7 Liters</button>
       </div>
     </header>
 
@@ -93,7 +93,7 @@
 
     <!-- Bottom: Test Button, Result, and Reset -->
     <div class="bottom-section">
-      <button class="btn btn-test" id="test-btn">Test for 7 Liters</button>
+      <button class="btn btn-test" id="test-btn">Test for 2 Liters</button>
       <div class="result-message" id="result-message"></div>
       <button class="btn btn-reset" id="reset-btn">Reset Jugs</button>
     </div>
